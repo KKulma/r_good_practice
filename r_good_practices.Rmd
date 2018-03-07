@@ -1,0 +1,44 @@
+---
+title: "r_best_practice"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+I've been asked more and more about 
+
+
+### use R projects. Always.
+1) all code and outputs stored in one location
+2) use of relative file locations - better reproducibility 
+
+
+### first thing: load necessary packages but also consider calling functions in a package via `::`
+
+### describe he purpose of he code / project
+
+### Name your code chunks and use them for navigation. 
+
+### Make your life easier by using a red dot when you need to. 
+
+### Write your code as if someone was going to use it without communicating with you. From day one
+- commenting
+- as clear and efficient as possible
+- ideally timed and tested 
+
+
+### name your files like a Pro.
+- [Jenny Bryan's slides](https://t.co/99waX8liuQ)
+
+### if you have to copy/paste bit of code at least 3 times, write a function. 
+
+
+### With big, complex data projects, use project pipeline.
+
+### Never save the working directory
+
+
+### Before publshing/sharing your code, run it in the fresh workspace. 
+
