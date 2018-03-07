@@ -10,9 +10,25 @@ knitr::opts_chunk$set(echo = TRUE)
 I've been asked more and more about 
 
 
-### use R projects. Always.
-1) all code and outputs stored in one location
-2) use of relative file locations - better reproducibility 
+### 01. Use R projects. Always.
+
+Human Civilization was built on conventions. R scripts have them, too. For example 
+> Any resident R script is written assuming that it will be run from a fresh R process with working directory set to the project directory. It creates everything it needs, in its own workspace or folder, and it touches nothing it did not create.
+
+You want your project to work. Not only now, but also in 5 years, even if folder and file paths change. Also, you want it to work when your collaborator runs it from their computer. Projects create convention that make it possible.
+
+Basically, they create the nevironment where
+
+1) all code and outputs are stored in one set location (no more `setwd()`!)
+2) relative file paths are created - this guarantees better reproducibility 
+3) clean R environment is created every time you open it (no more `rm(list = ls())`!) 
+
+If you're not convinced, read [a more thourough explanation given by Jenny Bryan](https://www.tidyverse.org/articles/2017/12/workflow-vs-script/). 
+
+So, go on and start a New Project today!
+
+
+
 
 
 ### first thing: load necessary packages but also consider calling functions in a package via `::`
