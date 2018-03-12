@@ -64,10 +64,17 @@ all_tweets <- tweets %>%
   na.omit()
 ```
 
+here, I'm expecting to use `readr` and `dplyr` packages regularly and I'm using `qdapRegex` library only once - to remove URL's from my tweet data. In this case I call `rm_url()` once and I specify the package that it comes from. Easy peasy.
 
 ### 04. Name your code chunks and use them for navigation. 
 
+Your code will grow. Sometimes it will turn into an R script equivalent to Bible volume. To keep it organised 
+
 ### 05. Make your life easier and mark your code when you need to. 
+
+Did you know that if you click anywhere left from line numbers in RStudio, it will create a red mark? I think this is one of the most underused features in RStudio, and a very useful one, too! Imagine having to define a function using another part of a very long R script? Instead of finding a relevant part of the script and then spending seconds or minutes on finding the function that you were about ot define, you first mark that function, go to the relevant bit of code and then have no problems finding the function to be defined again, as the red mark will tell you where to look. BTW, it works only in already saved R scripts and it doesn't work in RMarkdown files.
+
+<create a gif>
 
 ### 06. Write your code as if someone was going to use it without communicating with you. From day one
 - commenting
@@ -76,7 +83,7 @@ all_tweets <- tweets %>%
 
 
 ### 07. Name your files like a Pro.
-- [Jenny Bryan's slides](https://t.co/99waX8liuQ)
+ [Jenny Bryan's slides](https://t.co/99waX8liuQ)
 
 ### 08. If you have to copy/paste bit of code at least 3 times, write a function. 
 
@@ -88,3 +95,7 @@ all_tweets <- tweets %>%
 
 ### 11. Before publshing/sharing your code, run it in the fresh workspace. 
 
+This almost goes without saying, but if I got a £ for every time I forgot to do it...
+Basically, stuff happens when you write your code: you work with multiple files, maybe you loaded a package in one of them but forgot to do it in the rest of them? If that's the case, you'll be able to run all scripts in this particular session but if you send someone the code without the imported function... they will fail to run it. The same will happen if you try to run the script on its own, on your own machine. 
+
+Anyway, this doesn't need much explaining. Simply make sure that you re-run your code in a fresh session before you take it further. Amen. 
