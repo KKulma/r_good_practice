@@ -25,36 +25,66 @@ Basically, they create the nevironment where
 
 If you're not convinced, read [a more thourough explanation given by Jenny Bryan](https://www.tidyverse.org/articles/2017/12/workflow-vs-script/). 
 
-So, go on and start a New Project today!
+So, go on and start a New Project today! Otherwise, your comouter may be at risk of being set on fire...
+
+
+![Beware of Jenny Bryan!](pics/jb_tweet.png)
 
 
 
 
 
-### first thing: load necessary packages but also consider calling functions in a package via `::`
+### 02. Describe the purpose of your code / project
 
-### describe he purpose of he code / project
+Before you even load the packages or import the data, state the purpose and content of your script in hashed code.
 
-### Name your code chunks and use them for navigation. 
+```{r comment_example}
+### Data import and cleaning from sources A, B and C. 
+### This script is part of Segmentation project. 
+```
 
-### Make your life easier by using a red dot when you need to. 
+Naturally, you can update it along the way, but having such description in place from day one will guarantee that whoever has access to your script will instantly know what he/she is looking at. Also, if you leave it for later, the chances are that you'll forget to do it altogether and believe me, in X months time when you go back to your code it won't be that clear what were you trying to do here.
 
-### Write your code as if someone was going to use it without communicating with you. From day one
+### 03. Load all necessary packages in the begining of your script & consider calling functions in a package via `::`
+
+Ok, I know how it is: you load some basic packages to start with, but then the analysis takes to wonderous and wonderful places that require more specialised libraries. So you install and load them along the way... WRONG! Whenever you have to load a new package, go back to the beginning of your script and load them there. This way whenever you (or someone else) have to run the script again, they will have ALL necessary libraries to run it and won't get stuck somewhere in the middle of the execution because the function they called is not recognised. It's coding. Small things matter. 
+
+Also, if you don't want to load the whole package just for the sake of using a single function, consider specifying package directly via `::`. Use this text cleaning exercise as an example:
+
+```{r text_cleaning, eval=FALSE}
+library(readr)
+library(dplyr)
+
+tweets <- read_csv("tweets.csv")
+
+all_tweets <- tweets %>% 
+  rename(author = handle) %>% 
+  select(author, text) %>% 
+  mutate(text = qdapRegex::rm_url(text)) %>% #removes URLs from text
+  na.omit()
+```
+
+
+### 04. Name your code chunks and use them for navigation. 
+
+### 05. Make your life easier and mark your code when you need to. 
+
+### 06. Write your code as if someone was going to use it without communicating with you. From day one
 - commenting
 - as clear and efficient as possible
 - ideally timed and tested 
 
 
-### name your files like a Pro.
+### 07. Name your files like a Pro.
 - [Jenny Bryan's slides](https://t.co/99waX8liuQ)
 
-### if you have to copy/paste bit of code at least 3 times, write a function. 
+### 08. If you have to copy/paste bit of code at least 3 times, write a function. 
 
 
-### With big, complex data projects, use project pipeline.
+### 09. With big, complex data projects use project pipeline.
 
-### Never save the working directory
+### 10. Never save the content of your working environment.
 
 
-### Before publshing/sharing your code, run it in the fresh workspace. 
+### 11. Before publshing/sharing your code, run it in the fresh workspace. 
 
