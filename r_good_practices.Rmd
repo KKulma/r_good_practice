@@ -64,11 +64,18 @@ all_tweets <- tweets %>%
   na.omit()
 ```
 
-here, I'm expecting to use `readr` and `dplyr` packages regularly and I'm using `qdapRegex` library only once - to remove URL's from my tweet data. In this case I call `rm_url()` once and I specify the package that it comes from. Easy peasy.
+Here, I'm expecting to use `readr` and `dplyr` packages regularly and I'm using `qdapRegex` library only once - to remove URL's from my tweet data. In this case I call `rm_url()` once and I specify the package that it comes from. Easy peasy.
 
-### 04. Name your code chunks and use them for navigation. 
+### 04. Name your code sections and use them for quick navigation. 
 
-Your code will grow. Sometimes it will turn into an R script equivalent to Bible volume. To keep it organised 
+Your code will grow. Sometimes it will turn into an R script equivalent of the Bible, at least in terms of volume. To keep it organised, keep your code nice and tidy by assigning relevant code chunks to different sections that can be later folded/udfolded; you can also easily navigate yourself through chunks by using 'drop-up' menu at the bottom of the script screen. 
+
+You create a new code section by writing `####` or `----` at the end of any comment that is to become a new code section.
+
+The clip below will give you an idea what I'm talking about.  
+
+
+<gif/video>
 
 ### 05. Make your life easier and mark your code when you need to. 
 
@@ -76,7 +83,7 @@ Did you know that if you click anywhere left from line numbers in RStudio, it wi
 
 <create a gif>
 
-### 06. Write your code as if someone was going to use it without communicating with you. From day one
+### 06. Write your code as if someone was going to use it without communicating with you. From. Day. One.
 - commenting
 - as clear and efficient as possible
 - ideally timed and tested 
