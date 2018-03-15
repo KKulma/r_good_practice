@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 I've been asked more and more about 
 
 
-### 01. Use R projects. Always.
+### **01. Use R projects. Always.**
 
 Human Civilization was built on conventions. R scripts have them, too. For example 
 > Any resident R script is written assuming that it will be run from a fresh R process with working directory set to the project directory. It creates everything it needs, in its own workspace or folder, and it touches nothing it did not create.
@@ -34,7 +34,7 @@ So, go on and start a New Project today! Otherwise, your comouter may be at risk
 
 
 
-### 02. Describe the purpose of your code / project
+### **02. Describe the purpose of your code / project.**
 
 Before you even load the packages or import the data, state the purpose and content of your script in hashed code.
 
@@ -45,7 +45,7 @@ Before you even load the packages or import the data, state the purpose and cont
 
 Naturally, you can update it along the way, but having such description in place from day one will guarantee that whoever has access to your script will instantly know what he/she is looking at. Also, if you leave it for later, the chances are that you'll forget to do it altogether and believe me, in X months time when you go back to your code it won't be that clear what were you trying to do here.
 
-### 03. Load all necessary packages in the begining of your script & consider calling functions in a package via `::`
+### **03. Load all necessary packages in the begining of your script & consider calling functions in a package via `::`.**
 
 Ok, I know how it is: you load some basic packages to start with, but then the analysis takes to wonderous and wonderful places that require more specialised libraries. So you install and load them along the way... WRONG! Whenever you have to load a new package, go back to the beginning of your script and load them there. This way whenever you (or someone else) have to run the script again, they will have ALL necessary libraries to run it and won't get stuck somewhere in the middle of the execution because the function they called is not recognised. It's coding. Small things matter. 
 
@@ -66,7 +66,7 @@ all_tweets <- tweets %>%
 
 Here, I'm expecting to use `readr` and `dplyr` packages regularly and I'm using `qdapRegex` library only once - to remove URL's from my tweet data. In this case I call `rm_url()` once and I specify the package that it comes from. Easy peasy.
 
-### 04. Name your code sections and use them for quick navigation. 
+### **04. Name your code sections and use them for quick navigation. **
 
 Your code will grow. Sometimes it will turn into an R script equivalent of the Bible, at least in terms of volume. To keep it organised, keep your code nice and tidy by assigning relevant code chunks to different sections that can be later folded/udfolded; you can also easily navigate yourself through chunks by using 'drop-up' menu at the bottom of the script screen. 
 
@@ -77,19 +77,37 @@ The clip below will give you an idea what I'm talking about.
 
 <gif/video>
 
-### 05. Make your life easier and mark your code when you need to. 
+### **05. Make your life easier and mark your code when you need to. **
 
 Did you know that if you click anywhere left from line numbers in RStudio, it will create a red mark? I think this is one of the most underused features in RStudio, and a very useful one, too! Imagine having to define a function using another part of a very long R script? Instead of finding a relevant part of the script and then spending seconds or minutes on finding the function that you were about ot define, you first mark that function, go to the relevant bit of code and then have no problems finding the function to be defined again, as the red mark will tell you where to look. BTW, it works only in already saved R scripts and it doesn't work in RMarkdown files.
 
 <create a gif>
 
-### 06. Write your code as if someone was going to use it without communicating with you. From. Day. One.
-- commenting
-- as clear and efficient as possible
-- ideally timed and tested 
+### **06. Write your code as if someone was going to use it without communicating with you. From. Day. One.**
+
+I know, I know. We all mean to do it, but we rarely do. I always promise myself that I'll be thoroughtly commenting my code from the very beginning of the project but even these days I find it difficult to do it consistently. Why? Because:
+
+- analysis itself is more important (I'm telling myself).
+- I know what I'm doing.
+- I (usually) have no direct collaborators that are using the code.
+
+But how short-sighted those arguments are! The reality is that
+
+- even most precious and relevant piece of analysis is useless if you or others don't understand it (more about it below) 
+
+- you know what you're doing at the moment, but it won't feel the same way in a month or two when you have moved on to another project but someone asked you an innocent question about how you defined that key variable... Our memory is fallable. Make sure you don't have to rely on it with every single piece of code you produce
+
+- even you don't have active collaborators at the time of doing analysis, someone will have to use your code sooner or later. You're not going to be in the same position for the rest of your life. You're creating legacy that ONE DAY someone will use, no matter how far away it seems right now.
+
+What makes good, reproducible code?
+
+- generous and clear comments
+- logical and efficient code
+- code that is ideally timed and tested 
 
 
-### 07. Name your files like a Pro.
+### **07. Name your files like a Pro.**
+
 Jenny Bryan is probably the first very high profile R-user I know who's been actively highlighting the importance of things that not many people talk about: file naming is one of them. I'm not going to reinvent the excellent wheel that she has already invented, so I'm only going to summarise her advice here. But for more detail, please, please, have a look at  [Jenny's slides](https://t.co/99waX8liuQ). 
 
 So, what do all good file names have in common? They are: 
@@ -146,15 +164,15 @@ Again, one of Jenny's examples:
 
 I couldn't believe how much these little hacks improved the flow of my work. Paying attention to file names was also appreciated by my coworkers, I'm sure. 
 
-### 08. If you have to copy/paste excerpt of code 3 or more times, write a function for it. 
+### **08. If you have to copy/paste excerpt of code 3 or more times, write a function for it. **
 
 
-### 09. With big, complex data projects use project pipeline.
+### **09. With big, complex data projects use project pipeline.**
 
-### 10. Never save the content of your working environment.
+### **10. Never save the content of your working environment.**
 
 
-### 11. Before publshing/sharing your code, run it in the fresh workspace. 
+### **11. Before publshing/sharing your code, run it in the fresh workspace.**
 
 This almost goes without saying, but if I got a £ for every time I forgot to do it...
 Basically, stuff happens when you write your code: you work with multiple files, maybe you loaded a package in one of them but forgot to do it in the rest of them? If that's the case, you'll be able to run all scripts in this particular session but if you send someone the code without the imported function... they will fail to run it. The same will happen if you try to run the script on its own, on your own machine. 
