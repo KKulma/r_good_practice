@@ -166,10 +166,29 @@ I couldn't believe how much these little hacks improved the flow of my work. Pay
 
 ### **08. If you have to copy/paste excerpt of code 3 or more times, write a function for it. **
 
+.. as Hadley Wickham said many many times in his and Charlotte's [course on DataCamp](https://www.datacamp.com/courses/writing-functions-in-r/). It doesn't only teach you to write more elegant and efficient code, but also it makes it more readable for yourself and others. 
+
+To learn how to write good functions, you can have a sneak peak into the first chapter of the DataCamp course for free (the rest is avaialble under paid subscription) or read this [DataCamp tutorial](https://www.datacamp.com/community/tutorials/functions-in-r-a-tutorial). 
+
+
 
 ### **09. With big, complex data projects use project pipeline.**
 
-### **10. Never save the content of your working environment.**
+I'm not sure if `project pipeline` is an official name for what I want to tak about, but for a sake of the argument, let's call it a `project pipeline` ;) Namely, sometimes running a full project from one script - with even most clear and informatively named code sections - is simply difficult, if not unfeasible. Particularly when big(ish) data is involved: imagine trying to run a hevty model on data that requires importing and cleaning, where import into R alone takes about an hour (real life scenario!). You wouldn't possibly want to do it every time you open the project, right? 
+
+So what you do instead is write one script for data import and save the data.frame with useful data as an .RData file (using, e.g. `save(data1, file = "data.RData")`. Then start a new script for, let's say, data cleaning where you load previously imported data.frame from the .RData file (using `load("data.RData")`). Then you clean the data and save it as yet another .RData file. Then you write the third script where you load the clean data.frame from the second .RData file and you use it to run your model. Jenny Bryan's advice on file naming comes in handy here, as you want to name and order your scripts or their outputs logically to avoid surprises in the future.
+
+This way you create a clear structure of building blocks, as well inputs and outputs. Additionally, once the data has been imported and cleaned, you can jump straight away into next steps of analysis/modelling without wasting any time on the first two steps. 
+
+I started using this approach in big and complex projects after reading [this SO answer](https://stackoverflow.com/a/1434424) and I never looked back.
+
+### **10. Never save your workspace.**
+
+Again, there were others that already said it before me and said it much better than I would have. So there you go:
+
+>Loading a saved workspace turns your R script from a program, where everything happens logically according to the plan that is the code, to something akin to a cardboard box taken down from the attic, full of assorted pages and notebooks that may or may not be what they seem to be. You end up having to put an inordinate trust in your old self. I don’t know about your old selves, dear reader, but if they are anything like mine, don’t save your workspace.
+
+For details, see [Martin Johnsson](https://twitter.com/mrtnj)'s excellent [blog post](https://martinsbioblogg.wordpress.com/2017/04/02/using-r-dont-save-your-workspace/) that I quoted above.
 
 
 ### **11. Before publshing/sharing your code, run it in the fresh workspace.**
