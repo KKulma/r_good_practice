@@ -7,7 +7,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-I've been asked more and more for hints and best practices when working with R. It may seem obvious or simple, but it can be a daunting task, depending how deep or specialised you want to be. Also, there's lots (and I mean, LOTS) good advice out there that you should definitely check out (see some examples in the Reference section below), but I hope this post will fill in some of the gaps.
+I've been asked more and more for hints and best practices when working with R. It can be a daunting task, depending on how deep or specialised you want to be. So I tried to keep it as balanced as I could and mentioned point that definitely helped me in the last couple of years. Finally, there's lots (and I mean, LOTS) of good advice out there that you should definitely check out - see some examples in the Quick Reference section below.
 
 
 ### **01. Use R projects. Always.**
@@ -15,7 +15,7 @@ I've been asked more and more for hints and best practices when working with R. 
 Human Civilization was built on conventions. R scripts have them, too. For example 
 > Any resident R script is written assuming that it will be run from a fresh R process with working directory set to the project directory. It creates everything it needs, in its own workspace or folder, and it touches nothing it did not create.
 
-You want your project to work. Not only now, but also in 5 years, even if folder and file paths change. Also, you want it to work when your collaborator runs it from their computer. Projects create convention that make it possible.
+You want your project to work. Not only now, but also in 5 years, even if folder and file paths have changed. Also, you want it to work when your collaborator runs it from their computer. Projects create convention that make it possible.
 
 Basically, they create the environment where
 
@@ -222,5 +222,20 @@ So.. these are my 'prime hints' - if someone had told me about them 2 years ago,
 
 #### **General good practice**
 
+1. [Five Tips to Improve Your R Code (DataCamp)](https://www.datacamp.com/community/tutorials/five-tips-r-code-improve)
+
+2. [Workflow for statistical analysis and report writing (SO)](https://stackoverflow.com/questions/1429907/workflow-for-statistical-analysis-and-report-writing/1434424#1434424)
+
+3. [R Best Practices: R you writing the R way! (By Milind Paradkar)](https://www.quantinsti.com/blog/r-best-practices-r-you-writing-the-r-way/)
+
+4. [Good practices in R programming (Indiana University)](https://kb.iu.edu/d/aaxp)
+
+
 
 #### **Good practice for package building**
+
+1. [Good Practices for Writing R Packages (by Roman Tsegelskyi)](https://romantsegelskyi.github.io/blog/2015/11/16/good-practices-r-package/)
+
+2. [R package development "best practices" (by stevenpollack)](https://gist.github.com/stevenpollack/141b14437c6c4b071fff)
+
+3. [goodpractice - Advice on R Package Building (by MangoTheCat)](https://github.com/MangoTheCat/goodpractice)
