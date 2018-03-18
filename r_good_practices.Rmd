@@ -7,7 +7,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-I've been asked more and more about 
+I've been asked more and more for hints and best practices when working with R. It may seem obvious or simple, but it can be a daunting task, depending how deep or specialised you want to be. Also, there's lots (and I mean, LOTS) good advice out there that you should definitely check out (see some examples in the Reference section below), but I hope this post will fill in some of the gaps.
 
 
 ### **01. Use R projects. Always.**
@@ -72,16 +72,22 @@ Your code will grow. Sometimes it will turn into an R script equivalent of the B
 
 You create a new code section by writing `####` or `----` at the end of any comment that is to become a new code section.
 
-The clip below will give you an idea what I'm talking about.  
+See the image below for a simplified example:
 
 
-<gif/video>
+```{r, out.width = "550px", echo=FALSE}
+knitr::include_graphics("pics/code_sections.png")
+```
+
 
 ### **05. Make your life easier and mark your code when you need to. **
 
 Did you know that if you click anywhere left from line numbers in RStudio, it will create a red mark? I think this is one of the most underused features in RStudio, and a very useful one, too! Imagine having to define a function using another part of a very long R script? Instead of finding a relevant part of the script and then spending seconds or minutes on finding the function that you were about to define, you first mark that function, go to the relevant bit of code and then have no problems finding the function to be defined again, as the red mark will tell you where to look. BTW, it works only in already saved R scripts and it doesn't work in RMarkdown files.
 
-<create a gif>
+```{r, out.width = "550px", echo=FALSE}
+knitr::include_graphics("pics/red_dot.png")
+```
+
 
 ### **06. Write your code as if someone was going to use it without communicating with you. From. Day. One.**
 
@@ -207,3 +213,14 @@ Basically, stuff happens when you write your code: you work with multiple files,
 
 Anyway, this doesn't need much explaining. Simply make sure that you re-run your code in a fresh session before you take it further. Amen. 
 
+### **That's it for now.**
+
+So.. these are my 'prime hints' - if someone had told me about them 2 years ago, my `#rstats` life would have been much much easier. By no means is this list complete or exhaustive, but my intention was to highlight the points that I personally found most useful in my daily fun with R. Hope it will help someone!
+
+
+#### **QUICK REFERENCE**
+
+#### **General good practice**
+
+
+#### **Good practice for package building**
